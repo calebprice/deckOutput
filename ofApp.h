@@ -26,7 +26,7 @@ class ofApp : public ofBaseApp{
 
 		const float minus_1dB = 0.891251;
 		const float plus_1dB = 1.122018;
-		const float threshold = 300.0;
+		const float threshold = 500.0;
 
 		ofSoundPlayer soundPlayer;
 		float trackPos;

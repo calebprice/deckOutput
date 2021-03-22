@@ -70,11 +70,22 @@ void ofApp::update(){
 				trackSpeed = -abs(trackSpeed);
 				soundPlayer.setSpeed(trackSpeed);
 			}
-			// otherwise stop
-			else {
+			// est for stop gesture
+			else if (m.getArgAsFloat(2) < threshold) {
 				soundPlayer.stop();
 			}
-		} 
+
+			// test for speed increase gesture
+			if (m.getArgAsFloat(3) < threshold) {
+				trackSpeed = trackSpeed * 1.2;
+				soundPlayer.setSpeed(trackSpeed);
+			}
+			// test for speed decrease gesture
+			else if (m.getArgAsFloat(4) < threshold) {
+				trackSpeed = trackSpeed * 0.8;
+				soundPlayer.setSpeed(trackSpeed);
+			}
+		}
 	}
 
 }
